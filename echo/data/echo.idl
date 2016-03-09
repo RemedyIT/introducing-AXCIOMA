@@ -1,0 +1,8 @@
+ 
+module Example
+{
+  interface Echo
+  {
+    string process (in string text);
+  };
+};

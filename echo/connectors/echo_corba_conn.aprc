@@ -1,0 +1,10 @@
+ 
+connector 'echo_srr' do |conn|
+  # IDL file in which to find type definitions
+  conn.idl %w{ echo.idl }
+  # type of connector/port to create
+  conn.port_type :corba4ccm do |port|
+    # interface type to create connector for (needs fully scoped name)
+    port.interface 'Example::Echo'
+  end
+end

@@ -26,3 +26,24 @@
 *.exe
 *.out
 *.app
+
+# hidden files
+.*
+
+# backups
+*~
+
+# generated files
+*C.h
+*C.inl
+*C.cpp
+*P.h
+*S.h
+*S.inl
+*S.cpp
+*A.h
+*A.cpp
+
+# make files
+GNUmakefile*
+

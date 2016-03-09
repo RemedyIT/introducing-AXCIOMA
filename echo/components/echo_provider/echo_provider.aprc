@@ -1,0 +1,12 @@
+ 
+component 'echo_provider' do |comp|
+  # data/type idl
+  comp.idl %w{ echo.idl }
+  # component interface definition
+  comp.define 'Example::EchoProvider' do |intf|
+    # facet port with interface Example::Echo
+    intf.port 'do_echo' do |p|
+      p.provides 'Example::Echo'
+    end
+  end
+end

@@ -1,0 +1,12 @@
+ 
+component 'echo_user' do |comp|
+  # data/type idl
+  comp.idl %w{ echo.idl }
+  # component interface definition
+  comp.define 'Example::EchoUser' do |intf|
+    # receptacle port with interface Example::Echo
+    intf.port 'use_echo' do |p|
+      p.uses 'Example::Echo'
+    end
+  end
+end
