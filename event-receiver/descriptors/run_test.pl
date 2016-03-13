@@ -20,10 +20,10 @@ $DANCEX11_BIN_FOLDER = $ENV{'DANCEX11_BIN_FOLDER'} || 'bin';
 
 $sleep_time = 10;
 
-$nr_daemon = 2;
-@ports = ( 60001, 60002 );
-@iorbases = ( "Node1.ior", "Node2.ior" );
-@nodenames = ( "Node1", "Node2" );
+$nr_daemon = 1;
+@ports = ( 60001 );
+@iorbases = ( "Node1.ior" );
+@nodenames = ( "Node1" );
 
 $daemons_running = 0;
 $em_running = 0;
