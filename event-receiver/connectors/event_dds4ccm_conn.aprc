@@ -1,0 +1,7 @@
+#recipe for dds4ccm connector with recipe_id 'shapes_shapetype' .
+connector 'shapes' do |conn|
+  conn.idl %w{ shapes.idl }
+  conn.port_type :dds4ccm do |tp|
+    tp.topic 'ShapeType'
+  end
+end
