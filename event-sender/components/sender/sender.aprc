@@ -1,0 +1,9 @@
+component 'shapes_sender' do |comp|
+  comp.idl %w{ shapes.idl}
+  comp.define 'sender' do |intf|
+    intf.port 'shape' do |p|
+      p.writes 'ShapeType'
+    end
+  end
+end
+

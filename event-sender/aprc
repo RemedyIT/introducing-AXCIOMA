@@ -1,0 +1,3 @@
+
+# common IDL include folder(s)
+prj.idl_includes %w{ data }
