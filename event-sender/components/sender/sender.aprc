@@ -4,6 +4,9 @@ component 'shapes_sender' do |comp|
     intf.port 'shape' do |p|
       p.writes 'ShapeType'
     end
+    intf.port 'timer' do |p|
+      p.timed_trigger
+    end
   end
 end
 

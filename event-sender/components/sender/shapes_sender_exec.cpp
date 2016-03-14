@@ -17,6 +17,64 @@
 namespace sender_Impl
 {
   //@@{__RIDL_REGEN_MARKER__} - BEGIN : sender_Impl[user_namespace_impl]
+  class TT_Callback
+    : public IDL::traits<CCM_TT::TT_Handler>::base_type
+  {
+  public:
+    TT_Callback (IDL::traits< CCM_sender_Context >::ref_type context,
+                 DDS::InstanceHandle_t instance_handle,
+                 ShapeType& square)
+      : context_ (std::move (context)),
+        instance_handle_ (std::move (instance_handle)),
+        square_ (square) {}
+
+    virtual
+    void
+    on_trigger (
+        IDL::traits< ::CCM_TT::TT_Timer>::ref_type timer,
+        const ::CCM_TT::TT_Duration& time,
+        uint32_t round) override;
+
+  private:
+    IDL::traits<CCM_sender_Context >::ref_type context_;
+    DDS::InstanceHandle_t instance_handle_;
+    ShapeType square_;
+  };
+
+  void
+  TT_Callback::on_trigger (
+      IDL::traits< ::CCM_TT::TT_Timer>::ref_type,
+      const ::CCM_TT::TT_Duration&,
+      uint32_t)
+  {
+    try
+      {
+        IDL::traits< ::ShapeTypeInterface::Writer>::ref_type writer =
+          this->context_->get_connection_shape_data ();
+
+        writer->write_one (this->square_, this->instance_handle_);
+
+        ++this->square_.x ();
+        ++this->square_.y ();
+
+        CIAOX11_TEST_INFO
+          << "Updated "
+          << IDL::traits< ShapeType>::write (this->square_)
+          << std::endl;
+      }
+    catch (const CCM_DDS::NonExistent& )
+      {
+        CIAOX11_TEST_ERROR
+          << "NonExistent Error while writing "
+          <<  IDL::traits< ShapeType>::write (this->square_) << std::endl;
+      }
+    catch (const CCM_DDS::InternalError& )
+      {
+        CIAOX11_TEST_ERROR
+          << "Internal Error while writing "
+          <<  IDL::traits< ShapeType>::write (this->square_) << std::endl;
+      }
+  }
   //@@{__RIDL_REGEN_MARKER__} - END : sender_Impl[user_namespace_impl]
 
   /**
@@ -45,34 +103,6 @@ namespace sender_Impl
 
   /** User defined private operations. */
   //@@{__RIDL_REGEN_MARKER__} - BEGIN : sender_Impl::connector_status_ShapeType_exec_i[user_private_ops]
-  void
-  sender_exec_i::update_square ()
-  {
-    try
-      {
-        IDL::traits< ::ShapeTypeInterface::Writer>::ref_type writer =
-          this->context_->get_connection_shape_data ();
-
-        writer->write_one (this->square_, this->instance_handle_);
-
-        CIAOX11_TEST_DEBUG
-          << "Updated "
-          << IDL::traits< ShapeType>::write (this->square_)
-          << std::endl;
-      }
-    catch (const CCM_DDS::NonExistent& )
-      {
-        CIAOX11_TEST_ERROR
-          << "NonExistent Error while writing "
-          <<  IDL::traits< ShapeType>::write (this->square_) << std::endl;
-      }
-    catch (const CCM_DDS::InternalError& )
-      {
-        CIAOX11_TEST_ERROR
-          << "Internal Error while writing "
-          <<  IDL::traits< ShapeType>::write (this->square_) << std::endl;
-      }
-  }
   //@@{__RIDL_REGEN_MARKER__} - END : sender_Impl::connector_status_ShapeType_exec_i[user_private_ops]
 
 
@@ -184,37 +214,34 @@ namespace sender_Impl
   void sender_exec_i::ccm_activate ()
   {
     //@@{__RIDL_REGEN_MARKER__} - BEGIN : sender_Impl::sender_exec_i[ccm_activate]
-    try
-      {
-        IDL::traits < ::ShapeTypeInterface::Writer>::ref_type writer =
-          this->context_->get_connection_shape_data ();
+    IDL::traits < ::ShapeTypeInterface::Writer>::ref_type writer =
+      this->context_->get_connection_shape_data ();
 
-        this->instance_handle_ = writer->register_instance (this->square_);
+    this->instance_handle_ = writer->register_instance (this->square_);
 
-        CIAOX11_TEST_DEBUG
-          << "Registered shape " <<  IDL::traits< ShapeType>::write (this->square_) << std::endl;
+    CIAOX11_TEST_INFO
+      << "Registered shape " <<  IDL::traits< ShapeType>::write (this->square_) << std::endl;
 
-        this->update_square ();
-      }
-    catch (const CCM_DDS::AlreadyCreated& )
-      {
-        CIAOX11_TEST_ERROR
-          << "AlreadyCreated Error while creating "
-          <<  IDL::traits< ShapeType>::write (this->square_) << std::endl;
-      }
-    catch (const CCM_DDS::InternalError& )
-      {
-        CIAOX11_TEST_ERROR
-          << "Internal Error while creating "
-          <<  IDL::traits< ShapeType>::write (this->square_) << std::endl;
-      }
+    IDL::traits<CCM_TT::TT_Scheduler>::ref_type timer_scheduler =
+      this->context_->get_connection_timer ();
+
+    this->timer_ = timer_scheduler->schedule_repeated_trigger (
+      CORBA::make_reference<TT_Callback> (this->context_, this->instance_handle_, this->square_),
+      CCM_TT::TT_Duration (0, 0),
+      CCM_TT::TT_Duration (0, 50000000),
+      0);
     //@@{__RIDL_REGEN_MARKER__} - END : sender_Impl::sender_exec_i[ccm_activate]
   }
 
   void sender_exec_i::ccm_passivate ()
   {
     //@@{__RIDL_REGEN_MARKER__} - BEGIN : sender_Impl::sender_exec_i[ccm_passivate]
-    // Your code here
+    this->timer_->cancel ();
+
+    IDL::traits < ::ShapeTypeInterface::Writer>::ref_type writer =
+      this->context_->get_connection_shape_data ();
+
+    writer->unregister_instance (this->square_, this->instance_handle_);
     //@@{__RIDL_REGEN_MARKER__} - END : sender_Impl::sender_exec_i[ccm_passivate]
   }
 
@@ -237,6 +264,7 @@ namespace sender_Impl
     return this->connector_status_ShapeType_;
   //@@{__RIDL_REGEN_MARKER__} - END : sender_Impl::sender_exec_i[get_connector_status_ShapeType]
   }
+
 
 
 

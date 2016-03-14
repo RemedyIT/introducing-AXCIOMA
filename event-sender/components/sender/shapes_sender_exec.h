@@ -174,7 +174,8 @@ namespace sender_Impl
     /** @name User defined members. */
     //@{
     //@@{__RIDL_REGEN_MARKER__} - BEGIN : sender_Impl::sender_exec_i[user_members]
-    ::DDS::InstanceHandle_t instance_handle_ { ::DDS::HANDLE_NIL };
+    DDS::InstanceHandle_t instance_handle_ { ::DDS::HANDLE_NIL };
+    IDL::traits<CCM_TT::TT_Timer>::ref_type timer_ {};
     ShapeType square_ {"GREEN", 10, 10, 30};
     //@@{__RIDL_REGEN_MARKER__} - END : sender_Impl::sender_exec_i[user_members]
     //@}
@@ -182,7 +183,6 @@ namespace sender_Impl
     /** @name User defined private operations. */
     //@{
     //@@{__RIDL_REGEN_MARKER__} - BEGIN : sender_Impl::sender_exec_i[user_private_ops]
-    void update_square ();
     //@@{__RIDL_REGEN_MARKER__} - END : sender_Impl::sender_exec_i[user_private_ops]
     //@}
 
