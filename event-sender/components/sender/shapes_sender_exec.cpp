@@ -47,33 +47,18 @@ namespace sender_Impl
       const ::CCM_TT::TT_Duration&,
       uint32_t)
   {
-    try
-      {
-        IDL::traits< ::ShapeTypeInterface::Writer>::ref_type writer =
-          this->context_->get_connection_shape_data ();
+    IDL::traits< ::ShapeTypeInterface::Writer>::ref_type writer =
+      this->context_->get_connection_shape_data ();
 
-        writer->write_one (this->square_, this->instance_handle_);
+    writer->write_one (this->square_, this->instance_handle_);
 
-        ++this->square_.x ();
-        ++this->square_.y ();
+    ++this->square_.x ();
+    ++this->square_.y ();
 
-        CIAOX11_TEST_INFO
-          << "Updated "
-          << IDL::traits< ShapeType>::write (this->square_)
-          << std::endl;
-      }
-    catch (const CCM_DDS::NonExistent& )
-      {
-        CIAOX11_TEST_ERROR
-          << "NonExistent Error while writing "
-          <<  IDL::traits< ShapeType>::write (this->square_) << std::endl;
-      }
-    catch (const CCM_DDS::InternalError& )
-      {
-        CIAOX11_TEST_ERROR
-          << "Internal Error while writing "
-          <<  IDL::traits< ShapeType>::write (this->square_) << std::endl;
-      }
+    CIAOX11_TEST_INFO
+      << "Updated "
+      << IDL::traits< ShapeType>::write (this->square_)
+      << std::endl;
   }
   //@@{__RIDL_REGEN_MARKER__} - END : sender_Impl[user_namespace_impl]
 
