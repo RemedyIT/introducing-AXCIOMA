@@ -7,7 +7,7 @@
 #include "shapes_receiver_comp_exec.h"
 
 //@@{__RIDL_REGEN_MARKER__} - BEGIN : receiver_comp_Impl[user_includes]
-#include "ciao/testlib/ciaox11_testlog.h"
+#include <ciao/testlib/ciaox11_testlog.h>
 //@@{__RIDL_REGEN_MARKER__} - END : receiver_comp_Impl[user_includes]
 
 //@@{__RIDL_REGEN_MARKER__} - BEGIN : receiver_comp_Impl[user_global_impl]
@@ -58,7 +58,7 @@ namespace receiver_comp_Impl
   {
     //@@{__RIDL_REGEN_MARKER__} - BEGIN : receiver_comp_Impl::shape_data_listener_exec_i::on_one_data[_datum_info]
     X11_UNUSED_ARG(info);
-    CIAOX11_TEST_DEBUG << "Receiver, on_one_data " << IDL::traits< ShapeType>::write (datum) << std::endl;
+    CIAOX11_TEST_INFO<< "Receiver, on_one_data " << IDL::traits< ShapeType>::write (datum) << std::endl;
     //@@{__RIDL_REGEN_MARKER__} - END : receiver_comp_Impl::shape_data_listener_exec_i::on_one_data[_datum_info]
   }
 
