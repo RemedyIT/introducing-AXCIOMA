@@ -7,7 +7,7 @@
 #include "shapes_receiver_comp_exec.h"
 
 //@@{__RIDL_REGEN_MARKER__} - BEGIN : receiver_comp_Impl[user_includes]
-// Your includes here
+#include "ciao/testlib/ciaox11_testlog.h"
 //@@{__RIDL_REGEN_MARKER__} - END : receiver_comp_Impl[user_includes]
 
 //@@{__RIDL_REGEN_MARKER__} - BEGIN : receiver_comp_Impl[user_global_impl]
@@ -57,8 +57,8 @@ namespace receiver_comp_Impl
       const ::CCM_DDS::ReadInfo& info)
   {
     //@@{__RIDL_REGEN_MARKER__} - BEGIN : receiver_comp_Impl::shape_data_listener_exec_i::on_one_data[_datum_info]
-    X11_UNUSED_ARG(datum);
     X11_UNUSED_ARG(info);
+    CIAOX11_TEST_DEBUG << "Receiver, on_one_data " << IDL::traits< ShapeType>::write (datum) << std::endl;
     //@@{__RIDL_REGEN_MARKER__} - END : receiver_comp_Impl::shape_data_listener_exec_i::on_one_data[_datum_info]
   }
 
@@ -166,7 +166,9 @@ namespace receiver_comp_Impl
   void receiver_comp_exec_i::ccm_activate ()
   {
     //@@{__RIDL_REGEN_MARKER__} - BEGIN : receiver_comp_Impl::receiver_comp_exec_i[ccm_activate]
-    // Your code here
+    IDL::traits< ::CCM_DDS::DataListenerControl>::ref_type lc =
+      this->context_->get_connection_shape_data_control ();
+    lc->mode (::CCM_DDS::ListenerMode::ONE_BY_ONE);
     //@@{__RIDL_REGEN_MARKER__} - END : receiver_comp_Impl::receiver_comp_exec_i[ccm_activate]
   }
 
