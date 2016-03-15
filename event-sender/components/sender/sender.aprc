@@ -7,6 +7,7 @@ component 'shapes_sender' do |comp|
     intf.port 'timer' do |p|
       p.timed_trigger
     end
+    intf.attribute 'rate',type: 'short'
   end
 end
 

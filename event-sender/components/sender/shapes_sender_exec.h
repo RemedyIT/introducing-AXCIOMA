@@ -135,6 +135,21 @@ namespace sender_Impl
     virtual IDL::traits< ::CCM_DDS::CCM_ConnectorStatusListener >::ref_type get_connector_status_ShapeType () override;
     //@}
 
+    /** @name Supported attributes. */
+    //@{
+
+    /// Attribute rate
+
+    virtual
+    int16_t
+    rate () override;
+
+    virtual
+    void
+    rate (
+        int16_t rate) override;
+    //@}
+
     /** @name Session component operations */
     //@{
 
@@ -165,6 +180,12 @@ namespace sender_Impl
   private:
     /// Context for component instance.
     IDL::traits< CCM_sender_Context >::ref_type context_;
+
+    /** @name Component attributes. */
+    //@{
+    /// Class member storing value of rate attribute
+    int16_t rate_ {};
+    //@}
 
     /** @name Component facets. */
     //@{
