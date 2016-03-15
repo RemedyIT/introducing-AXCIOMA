@@ -163,7 +163,7 @@ namespace sender_Impl
    * Component Executor Implementation Class : sender_exec_i
    */
   //@@{__RIDL_REGEN_MARKER__} - BEGIN : sender_Impl::sender_exec_i[ctor]
-  sender_exec_i::sender_exec_i ()
+  sender_exec_i::sender_exec_i () : rate_ (1)
   {
   }
   //@@{__RIDL_REGEN_MARKER__} - END : sender_Impl::sender_exec_i[ctor]
@@ -199,21 +199,18 @@ namespace sender_Impl
   void sender_exec_i::ccm_activate ()
   {
     //@@{__RIDL_REGEN_MARKER__} - BEGIN : sender_Impl::sender_exec_i[ccm_activate]
-    IDL::traits < ::ShapeTypeInterface::Writer>::ref_type writer =
-      this->context_->get_connection_shape_data ();
+    IDL::traits < ::ShapeTypeInterface::Writer>::ref_type writer = this->context_->get_connection_shape_data ();
 
     this->instance_handle_ = writer->register_instance (this->square_);
 
-    CIAOX11_TEST_INFO
-      << "Registered shape " <<  IDL::traits< ShapeType>::write (this->square_) << std::endl;
+    CIAOX11_TEST_INFO << "Registered shape " <<  IDL::traits< ShapeType>::write (this->square_) << std::endl;
 
-    IDL::traits<CCM_TT::TT_Scheduler>::ref_type timer_scheduler =
-      this->context_->get_connection_timer ();
+    IDL::traits<CCM_TT::TT_Scheduler>::ref_type timer_scheduler = this->context_->get_connection_timer ();
 
     this->timer_ = timer_scheduler->schedule_repeated_trigger (
       CORBA::make_reference<TT_Callback> (this->context_, this->instance_handle_, this->square_),
       CCM_TT::TT_Duration (0, 0),
-      CCM_TT::TT_Duration (0, 50000000),
+      CCM_TT::TT_Duration (0, 1000000000 / this->rate_),
       0);
     //@@{__RIDL_REGEN_MARKER__} - END : sender_Impl::sender_exec_i[ccm_activate]
   }
@@ -253,6 +250,23 @@ namespace sender_Impl
 
 
 
+
+  int16_t
+  sender_exec_i::rate ()
+  {
+    //@@{__RIDL_REGEN_MARKER__} - BEGIN : sender_Impl::sender_exec_i::rate[getter]
+    return this->rate_;
+    //@@{__RIDL_REGEN_MARKER__} - END : sender_Impl::sender_exec_i::rate[getter]
+  }
+
+  void
+  sender_exec_i::rate (
+      int16_t rate)
+  {
+    //@@{__RIDL_REGEN_MARKER__} - BEGIN : sender_Impl::sender_exec_i::rate[setter]
+    this->rate_ = rate;
+    //@@{__RIDL_REGEN_MARKER__} - END : sender_Impl::sender_exec_i::rate[setter]
+  }
 
   /// Operations from Components::SessionComponent
   void
