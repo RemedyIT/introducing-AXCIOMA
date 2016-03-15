@@ -17,7 +17,7 @@
 namespace sender_Impl
 {
   //@@{__RIDL_REGEN_MARKER__} - BEGIN : sender_Impl[user_namespace_impl]
-  class TT_Callback
+  class TT_Callback final
     : public IDL::traits<CCM_TT::TT_Handler>::base_type
   {
   public:
