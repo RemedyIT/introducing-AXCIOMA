@@ -77,7 +77,6 @@ namespace Example_EchoProvider_Impl
     //@@{__RIDL_REGEN_MARKER__} - END : Example_EchoProvider_Impl::EchoProvider_exec_i[dtor]
   }
 
-
   /** User defined public operations. */
   //@@{__RIDL_REGEN_MARKER__} - BEGIN : Example_EchoProvider_Impl::EchoProvider_exec_i[user_public_ops]
   // Your code here
@@ -87,8 +86,6 @@ namespace Example_EchoProvider_Impl
   //@@{__RIDL_REGEN_MARKER__} - BEGIN : Example_EchoProvider_Impl::EchoProvider_exec_i[user_private_ops]
   // Your code here
   //@@{__RIDL_REGEN_MARKER__} - END : Example_EchoProvider_Impl::EchoProvider_exec_i[user_private_ops]
-
-
 
   /** Session component operations */
   void EchoProvider_exec_i::configuration_complete ()
@@ -119,7 +116,6 @@ namespace Example_EchoProvider_Impl
     //@@{__RIDL_REGEN_MARKER__} - END : Example_EchoProvider_Impl::EchoProvider_exec_i[ccm_remove]
   }
 
-
   IDL::traits< ::Example::CCM_Echo >::ref_type
   EchoProvider_exec_i::get_do_echo ()
   {
@@ -131,7 +127,6 @@ namespace Example_EchoProvider_Impl
     return this->do_echo_;
   //@@{__RIDL_REGEN_MARKER__} - END : Example_EchoProvider_Impl::EchoProvider_exec_i[get_do_echo]
   }
-
 
   /// Operations from Components::SessionComponent
   void

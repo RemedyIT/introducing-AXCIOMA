@@ -36,7 +36,6 @@ namespace Example_EchoUser_Impl
     //@@{__RIDL_REGEN_MARKER__} - END : Example_EchoUser_Impl::EchoUser_exec_i[dtor]
   }
 
-
   /** User defined public operations. */
   //@@{__RIDL_REGEN_MARKER__} - BEGIN : Example_EchoUser_Impl::EchoUser_exec_i[user_public_ops]
   // Your code here
@@ -46,8 +45,6 @@ namespace Example_EchoUser_Impl
   //@@{__RIDL_REGEN_MARKER__} - BEGIN : Example_EchoUser_Impl::EchoUser_exec_i[user_private_ops]
   // Your code here
   //@@{__RIDL_REGEN_MARKER__} - END : Example_EchoUser_Impl::EchoUser_exec_i[user_private_ops]
-
-
 
   /** Session component operations */
   void EchoUser_exec_i::configuration_complete ()
@@ -61,7 +58,7 @@ namespace Example_EchoUser_Impl
   {
     //@@{__RIDL_REGEN_MARKER__} - BEGIN : Example_EchoUser_Impl::EchoUser_exec_i[ccm_activate]
     CIAOX11_TEST_INFO << "[EchoUser] ccm_activate called" << std::endl;
-    
+
     IDL::traits<Example::Echo>::ref_type echo_ref = this->context_->get_connection_use_echo ();
     if (echo_ref)
     {
@@ -72,7 +69,7 @@ namespace Example_EchoUser_Impl
     {
       CIAOX11_TEST_ERROR << "[EchoUser] NO connection!" << std::endl;
     }
-      
+
     //@@{__RIDL_REGEN_MARKER__} - END : Example_EchoUser_Impl::EchoUser_exec_i[ccm_activate]
   }
 
@@ -89,8 +86,6 @@ namespace Example_EchoUser_Impl
     // Your code here
     //@@{__RIDL_REGEN_MARKER__} - END : Example_EchoUser_Impl::EchoUser_exec_i[ccm_remove]
   }
-
-
 
   /// Operations from Components::SessionComponent
   void
