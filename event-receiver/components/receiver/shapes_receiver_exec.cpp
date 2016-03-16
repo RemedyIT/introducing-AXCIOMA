@@ -142,7 +142,6 @@ namespace receiver_Impl
     //@@{__RIDL_REGEN_MARKER__} - END : receiver_Impl::receiver_exec_i[dtor]
   }
 
-
   /** User defined public operations. */
   //@@{__RIDL_REGEN_MARKER__} - BEGIN : receiver_Impl::receiver_exec_i[user_public_ops]
   // Your code here
@@ -152,8 +151,6 @@ namespace receiver_Impl
   //@@{__RIDL_REGEN_MARKER__} - BEGIN : receiver_Impl::receiver_exec_i[user_private_ops]
   // Your code here
   //@@{__RIDL_REGEN_MARKER__} - END : receiver_Impl::receiver_exec_i[user_private_ops]
-
-
 
   /** Session component operations */
   void receiver_exec_i::configuration_complete ()
@@ -186,9 +183,6 @@ namespace receiver_Impl
     //@@{__RIDL_REGEN_MARKER__} - END : receiver_Impl::receiver_exec_i[ccm_remove]
   }
 
-
-
-
   IDL::traits< ::ShapeTypeInterface::CCM_Listener >::ref_type
   receiver_exec_i::get_shape_data_listener ()
   {
@@ -201,8 +195,6 @@ namespace receiver_Impl
   //@@{__RIDL_REGEN_MARKER__} - END : receiver_Impl::receiver_exec_i[get_shape_data_listener]
   }
 
-
-
   IDL::traits< ::CCM_DDS::CCM_PortStatusListener >::ref_type
   receiver_exec_i::get_shape_status ()
   {
@@ -214,8 +206,6 @@ namespace receiver_Impl
     return this->shape_status_;
   //@@{__RIDL_REGEN_MARKER__} - END : receiver_Impl::receiver_exec_i[get_shape_status]
   }
-
-
 
   /// Operations from Components::SessionComponent
   void

@@ -175,7 +175,6 @@ namespace sender_Impl
     //@@{__RIDL_REGEN_MARKER__} - END : sender_Impl::sender_exec_i[dtor]
   }
 
-
   /** User defined public operations. */
   //@@{__RIDL_REGEN_MARKER__} - BEGIN : sender_Impl::sender_exec_i[user_public_ops]
   // Your code here
@@ -243,6 +242,7 @@ namespace sender_Impl
     return this->connector_status_ShapeType_;
   //@@{__RIDL_REGEN_MARKER__} - END : sender_Impl::sender_exec_i[get_connector_status_ShapeType]
   }
+
 
   int16_t
   sender_exec_i::rate ()
