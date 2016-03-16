@@ -186,8 +186,6 @@ namespace sender_Impl
   // Your code here
   //@@{__RIDL_REGEN_MARKER__} - END : sender_Impl::sender_exec_i[user_private_ops]
 
-
-
   /** Session component operations */
   void sender_exec_i::configuration_complete ()
   {
@@ -234,7 +232,6 @@ namespace sender_Impl
     //@@{__RIDL_REGEN_MARKER__} - END : sender_Impl::sender_exec_i[ccm_remove]
   }
 
-
   IDL::traits< ::CCM_DDS::CCM_ConnectorStatusListener >::ref_type
   sender_exec_i::get_connector_status_ShapeType ()
   {
@@ -246,10 +243,6 @@ namespace sender_Impl
     return this->connector_status_ShapeType_;
   //@@{__RIDL_REGEN_MARKER__} - END : sender_Impl::sender_exec_i[get_connector_status_ShapeType]
   }
-
-
-
-
 
   int16_t
   sender_exec_i::rate ()
