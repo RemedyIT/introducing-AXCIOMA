@@ -7,7 +7,7 @@
 #include "echo_provider_exec.h"
 
 //@@{__RIDL_REGEN_MARKER__} - BEGIN : Example_EchoProvider_Impl[user_includes]
-#include <ciao/testlib/ciaox11_testlog.h>
+#include <ciaox11/testlib/ciaox11_testlog.h>
 //@@{__RIDL_REGEN_MARKER__} - END : Example_EchoProvider_Impl[user_includes]
 
 //@@{__RIDL_REGEN_MARKER__} - BEGIN : Example_EchoProvider_Impl[user_global_impl]

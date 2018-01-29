@@ -7,11 +7,9 @@
 
 //@@{__RIDL_REGEN_MARKER__} - HEADER_END : echo_provider_impl.h[Header]
 
-#include "echo_providerEC.h"
+#pragma once
 
-#if !defined (ACE_LACKS_PRAGMA_ONCE)
-# pragma once
-#endif /* ACE_LACKS_PRAGMA_ONCE */
+#include "echo_providerEC.h"
 
 #include /**/ "echo_provider_exec_export.h"
 

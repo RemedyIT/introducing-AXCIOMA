@@ -7,11 +7,9 @@
 
 //@@{__RIDL_REGEN_MARKER__} - HEADER_END : shapes_sender_impl.h[Header]
 
-#include "shapes_senderEC.h"
+#pragma once
 
-#if !defined (ACE_LACKS_PRAGMA_ONCE)
-# pragma once
-#endif /* ACE_LACKS_PRAGMA_ONCE */
+#include "shapes_senderEC.h"
 
 #include /**/ "shapes_sender_exec_export.h"
 

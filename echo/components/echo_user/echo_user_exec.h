@@ -7,11 +7,9 @@
 
 //@@{__RIDL_REGEN_MARKER__} - HEADER_END : echo_user_impl.h[Header]
 
-#include "echo_userEC.h"
+#pragma once
 
-#if !defined (ACE_LACKS_PRAGMA_ONCE)
-# pragma once
-#endif /* ACE_LACKS_PRAGMA_ONCE */
+#include "echo_userEC.h"
 
 #include /**/ "echo_user_exec_export.h"
 
