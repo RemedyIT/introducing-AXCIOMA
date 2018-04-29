@@ -7,7 +7,7 @@
 #include "shapes_sender_exec.h"
 
 //@@{__RIDL_REGEN_MARKER__} - BEGIN : sender_Impl[user_includes]
-#include <ciao/testlib/ciaox11_testlog.h>
+#include <ciaox11/testlib/ciaox11_testlog.h>
 //@@{__RIDL_REGEN_MARKER__} - END : sender_Impl[user_includes]
 
 //@@{__RIDL_REGEN_MARKER__} - BEGIN : sender_Impl[user_global_impl]
@@ -268,7 +268,7 @@ namespace sender_Impl
   {
     // Setting the context of this component.
     //@@{__RIDL_REGEN_MARKER__} - BEGIN : sender_Impl::sender_exec_i[set_session_context]
-    this->context_ = IDL::traits< CCM_sender_Context >::narrow (ctx);
+    this->context_ = IDL::traits< CCM_sender_Context >::narrow (std::move(ctx));
     //@@{__RIDL_REGEN_MARKER__} - END : sender_Impl::sender_exec_i[set_session_context]
   }
 

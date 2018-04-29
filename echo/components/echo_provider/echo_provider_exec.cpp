@@ -135,7 +135,7 @@ namespace Example_EchoProvider_Impl
   {
     // Setting the context of this component.
     //@@{__RIDL_REGEN_MARKER__} - BEGIN : Example_EchoProvider_Impl::EchoProvider_exec_i[set_session_context]
-    this->context_ = IDL::traits< ::Example::CCM_EchoProvider_Context >::narrow (ctx);
+    this->context_ = IDL::traits< ::Example::CCM_EchoProvider_Context >::narrow (std::move(ctx));
     //@@{__RIDL_REGEN_MARKER__} - END : Example_EchoProvider_Impl::EchoProvider_exec_i[set_session_context]
   }
 

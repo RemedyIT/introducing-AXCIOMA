@@ -94,7 +94,7 @@ namespace Example_EchoUser_Impl
   {
     // Setting the context of this component.
     //@@{__RIDL_REGEN_MARKER__} - BEGIN : Example_EchoUser_Impl::EchoUser_exec_i[set_session_context]
-    this->context_ = IDL::traits< ::Example::CCM_EchoUser_Context >::narrow (ctx);
+    this->context_ = IDL::traits< ::Example::CCM_EchoUser_Context >::narrow (std::move(ctx));
     //@@{__RIDL_REGEN_MARKER__} - END : Example_EchoUser_Impl::EchoUser_exec_i[set_session_context]
   }
 
