@@ -102,16 +102,16 @@ namespace Example_EchoUser_Impl
   //@@{__RIDL_REGEN_MARKER__} - BEGIN : Example_EchoUser_Impl[user_namespace_end_impl]
   //@@{__RIDL_REGEN_MARKER__} - END : Example_EchoUser_Impl[user_namespace_end_impl]
 
-  //@@{__RIDL_REGEN_MARKER__} - BEGIN : Example_EchoUser_Impl[factory]
-  extern "C" void
-  create_Example_EchoUser_Impl (
-    IDL::traits<Components::EnterpriseComponent>::ref_type& component)
-  {
-    component = CORBA::make_reference <EchoUser_exec_i> ();
-  }
-  //@@{__RIDL_REGEN_MARKER__} - END : Example_EchoUser_Impl[factory]
-
 } // namespace Example_EchoUser_Impl
+
+//@@{__RIDL_REGEN_MARKER__} - BEGIN : Example_EchoUser_Impl[factory]
+extern "C" void
+create_Example_EchoUser_Impl (
+  IDL::traits<Components::EnterpriseComponent>::ref_type& component)
+{
+  component = CORBA::make_reference <Example_EchoUser_Impl::EchoUser_exec_i> ();
+}
+//@@{__RIDL_REGEN_MARKER__} - END : Example_EchoUser_Impl[factory]
 //@@{__RIDL_REGEN_MARKER__} - BEGIN : echo_user_impl.cpp[Footer]
 // Your footer (code) here
 // -*- END -*-

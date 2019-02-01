@@ -110,13 +110,13 @@ namespace Example_EchoUser_Impl
   //@@{__RIDL_REGEN_MARKER__} - BEGIN : Example_EchoUser_Impl[user_namespace_end_decl]
   //@@{__RIDL_REGEN_MARKER__} - END : Example_EchoUser_Impl[user_namespace_end_decl]
 
-  //@@{__RIDL_REGEN_MARKER__} - BEGIN : Example_EchoUser_Impl[factory]
+} // namespace Example_EchoUser_Impl
+
+//@@{__RIDL_REGEN_MARKER__} - BEGIN : Example_EchoUser_Impl[factory]
   extern "C" ECHO_USER_EXEC_Export  void
   create_Example_EchoUser_Impl (
     IDL::traits<Components::EnterpriseComponent>::ref_type& component);
-  //@@{__RIDL_REGEN_MARKER__} - END : Example_EchoUser_Impl[factory]
-
-} // namespace Example_EchoUser_Impl
+//@@{__RIDL_REGEN_MARKER__} - END : Example_EchoUser_Impl[factory]
 //@@{__RIDL_REGEN_MARKER__} - BEGIN : echo_user_impl.h[Footer]
 
 #endif /* __RIDL_ECHO_USER_EXEC_H_BAACAJDE_INCLUDED__ */

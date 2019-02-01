@@ -143,16 +143,16 @@ namespace Example_EchoProvider_Impl
   //@@{__RIDL_REGEN_MARKER__} - BEGIN : Example_EchoProvider_Impl[user_namespace_end_impl]
   //@@{__RIDL_REGEN_MARKER__} - END : Example_EchoProvider_Impl[user_namespace_end_impl]
 
-  //@@{__RIDL_REGEN_MARKER__} - BEGIN : Example_EchoProvider_Impl[factory]
-  extern "C" void
-  create_Example_EchoProvider_Impl (
-    IDL::traits<Components::EnterpriseComponent>::ref_type& component)
-  {
-    component = CORBA::make_reference <EchoProvider_exec_i> ();
-  }
-  //@@{__RIDL_REGEN_MARKER__} - END : Example_EchoProvider_Impl[factory]
-
 } // namespace Example_EchoProvider_Impl
+
+//@@{__RIDL_REGEN_MARKER__} - BEGIN : Example_EchoProvider_Impl[factory]
+extern "C" void
+create_Example_EchoProvider_Impl (
+  IDL::traits<Components::EnterpriseComponent>::ref_type& component)
+{
+  component = CORBA::make_reference <Example_EchoProvider_Impl::EchoProvider_exec_i> ();
+}
+//@@{__RIDL_REGEN_MARKER__} - END : Example_EchoProvider_Impl[factory]
 //@@{__RIDL_REGEN_MARKER__} - BEGIN : echo_provider_impl.cpp[Footer]
 // Your footer (code) here
 // -*- END -*-
