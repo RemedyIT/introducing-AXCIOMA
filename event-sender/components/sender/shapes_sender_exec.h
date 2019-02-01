@@ -218,13 +218,13 @@ namespace sender_Impl
   //@@{__RIDL_REGEN_MARKER__} - BEGIN : sender_Impl[user_namespace_end_decl]
   //@@{__RIDL_REGEN_MARKER__} - END : sender_Impl[user_namespace_end_decl]
 
-  //@@{__RIDL_REGEN_MARKER__} - BEGIN : sender_Impl[factory]
+} // namespace sender_Impl
+
+//@@{__RIDL_REGEN_MARKER__} - BEGIN : sender_Impl[factory]
   extern "C" SHAPES_SENDER_EXEC_Export  void
   create_sender_Impl (
     IDL::traits<Components::EnterpriseComponent>::ref_type& component);
-  //@@{__RIDL_REGEN_MARKER__} - END : sender_Impl[factory]
-
-} // namespace sender_Impl
+//@@{__RIDL_REGEN_MARKER__} - END : sender_Impl[factory]
 //@@{__RIDL_REGEN_MARKER__} - BEGIN : shapes_sender_impl.h[Footer]
 
 #endif /* __RIDL_SHAPES_SENDER_EXEC_H_HFGCEJBI_INCLUDED__ */

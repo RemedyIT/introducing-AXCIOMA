@@ -222,16 +222,16 @@ namespace receiver_Impl
   //@@{__RIDL_REGEN_MARKER__} - BEGIN : receiver_Impl[user_namespace_end_impl]
   //@@{__RIDL_REGEN_MARKER__} - END : receiver_Impl[user_namespace_end_impl]
 
-  //@@{__RIDL_REGEN_MARKER__} - BEGIN : receiver_Impl[factory]
-  extern "C" void
-  create_receiver_Impl (
-    IDL::traits<Components::EnterpriseComponent>::ref_type& component)
-  {
-    component = CORBA::make_reference <receiver_exec_i> ();
-  }
-  //@@{__RIDL_REGEN_MARKER__} - END : receiver_Impl[factory]
-
 } // namespace receiver_Impl
+
+//@@{__RIDL_REGEN_MARKER__} - BEGIN : receiver_Impl[factory]
+extern "C" void
+create_receiver_Impl (
+  IDL::traits<Components::EnterpriseComponent>::ref_type& component)
+{
+  component = CORBA::make_reference <receiver_Impl::receiver_exec_i> ();
+}
+//@@{__RIDL_REGEN_MARKER__} - END : receiver_Impl[factory]
 //@@{__RIDL_REGEN_MARKER__} - BEGIN : shapes_receiver_impl.cpp[Footer]
 // Your footer (code) here
 // -*- END -*-

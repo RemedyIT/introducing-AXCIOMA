@@ -165,13 +165,13 @@ namespace Example_EchoProvider_Impl
   //@@{__RIDL_REGEN_MARKER__} - BEGIN : Example_EchoProvider_Impl[user_namespace_end_decl]
   //@@{__RIDL_REGEN_MARKER__} - END : Example_EchoProvider_Impl[user_namespace_end_decl]
 
-  //@@{__RIDL_REGEN_MARKER__} - BEGIN : Example_EchoProvider_Impl[factory]
+} // namespace Example_EchoProvider_Impl
+
+//@@{__RIDL_REGEN_MARKER__} - BEGIN : Example_EchoProvider_Impl[factory]
   extern "C" ECHO_PROVIDER_EXEC_Export  void
   create_Example_EchoProvider_Impl (
     IDL::traits<Components::EnterpriseComponent>::ref_type& component);
-  //@@{__RIDL_REGEN_MARKER__} - END : Example_EchoProvider_Impl[factory]
-
-} // namespace Example_EchoProvider_Impl
+//@@{__RIDL_REGEN_MARKER__} - END : Example_EchoProvider_Impl[factory]
 //@@{__RIDL_REGEN_MARKER__} - BEGIN : echo_provider_impl.h[Footer]
 
 #endif /* __RIDL_ECHO_PROVIDER_EXEC_H_HHDFGFCE_INCLUDED__ */

@@ -238,13 +238,13 @@ namespace receiver_Impl
   //@@{__RIDL_REGEN_MARKER__} - BEGIN : receiver_Impl[user_namespace_end_decl]
   //@@{__RIDL_REGEN_MARKER__} - END : receiver_Impl[user_namespace_end_decl]
 
-  //@@{__RIDL_REGEN_MARKER__} - BEGIN : receiver_Impl[factory]
+} // namespace receiver_Impl
+
+//@@{__RIDL_REGEN_MARKER__} - BEGIN : receiver_Impl[factory]
   extern "C" SHAPES_RECEIVER_EXEC_Export  void
   create_receiver_Impl (
     IDL::traits<Components::EnterpriseComponent>::ref_type& component);
-  //@@{__RIDL_REGEN_MARKER__} - END : receiver_Impl[factory]
-
-} // namespace receiver_Impl
+//@@{__RIDL_REGEN_MARKER__} - END : receiver_Impl[factory]
 //@@{__RIDL_REGEN_MARKER__} - BEGIN : shapes_receiver_impl.h[Footer]
 
 #endif /* __RIDL_SHAPES_RECEIVER_COMP_EXEC_H_BBJCHIEC_INCLUDED__ */
