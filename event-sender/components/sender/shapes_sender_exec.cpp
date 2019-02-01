@@ -276,16 +276,16 @@ namespace sender_Impl
   //@@{__RIDL_REGEN_MARKER__} - BEGIN : sender_Impl[user_namespace_end_impl]
   //@@{__RIDL_REGEN_MARKER__} - END : sender_Impl[user_namespace_end_impl]
 
-  //@@{__RIDL_REGEN_MARKER__} - BEGIN : sender_Impl[factory]
-  extern "C" void
-  create_sender_Impl (
-    IDL::traits<Components::EnterpriseComponent>::ref_type& component)
-  {
-    component = CORBA::make_reference <sender_exec_i> ();
-  }
-  //@@{__RIDL_REGEN_MARKER__} - END : sender_Impl[factory]
-
 } // namespace sender_Impl
+
+//@@{__RIDL_REGEN_MARKER__} - BEGIN : sender_Impl[factory]
+extern "C" void
+create_sender_Impl (
+  IDL::traits<Components::EnterpriseComponent>::ref_type& component)
+{
+  component = CORBA::make_reference <sender_Impl::sender_exec_i> ();
+}
+//@@{__RIDL_REGEN_MARKER__} - END : sender_Impl[factory]
 //@@{__RIDL_REGEN_MARKER__} - BEGIN : shapes_sender_impl.cpp[Footer]
 // Your footer (code) here
 // -*- END -*-
