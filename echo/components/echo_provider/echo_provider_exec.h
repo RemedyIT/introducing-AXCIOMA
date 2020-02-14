@@ -65,7 +65,7 @@ namespace Example_EchoProvider_Impl
 
   private:
     /// Context for component instance. Used for all middleware communication.
-    IDL::traits< ::Example::CCM_EchoProvider_Context >::ref_type context_;
+    IDL::traits< ::Example::CCM_EchoProvider_Context>::ref_type context_;
 
     /** @name User defined members. */
     //@{
@@ -99,7 +99,7 @@ namespace Example_EchoProvider_Impl
 
     /// Factory method and getter for the do_echo facet
     /// @return existing instance of facet if one exists, else creates one
-    virtual IDL::traits< ::Example::CCM_Echo >::ref_type get_do_echo () override;
+    virtual IDL::traits< ::Example::CCM_Echo>::ref_type get_do_echo () override;
     //@}
 
     /** @name Session component operations */
@@ -131,11 +131,11 @@ namespace Example_EchoProvider_Impl
 
   private:
     /// Context for component instance.
-    IDL::traits< ::Example::CCM_EchoProvider_Context >::ref_type context_;
+    IDL::traits< ::Example::CCM_EchoProvider_Context>::ref_type context_;
 
     /** @name Component facets. */
     //@{
-    IDL::traits< ::Example::CCM_Echo >::ref_type do_echo_;
+    IDL::traits< ::Example::CCM_Echo>::ref_type do_echo_;
     //@}
 
     /** @name User defined members. */
