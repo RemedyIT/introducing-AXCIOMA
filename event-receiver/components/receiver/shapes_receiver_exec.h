@@ -72,7 +72,7 @@ namespace receiver_Impl
 
   private:
     /// Context for component instance. Used for all middleware communication.
-    IDL::traits< CCM_receiver_Context >::ref_type context_;
+    IDL::traits< CCM_receiver_Context>::ref_type context_;
 
     /** @name User defined members. */
     //@{
@@ -130,7 +130,7 @@ namespace receiver_Impl
 
   private:
     /// Context for component instance. Used for all middleware communication.
-    IDL::traits< CCM_receiver_Context >::ref_type context_;
+    IDL::traits< CCM_receiver_Context>::ref_type context_;
 
     /** @name User defined members. */
     //@{
@@ -164,10 +164,10 @@ namespace receiver_Impl
 
     /// Factory method and getter for the shape_data_listener facet
     /// @return existing instance of facet if one exists, else creates one
-    virtual IDL::traits< ::ShapeTypeInterface::CCM_Listener >::ref_type get_shape_data_listener () override;
+    virtual IDL::traits< ::ShapeTypeInterface::CCM_Listener>::ref_type get_shape_data_listener () override;
     /// Factory method and getter for the shape_status facet
     /// @return existing instance of facet if one exists, else creates one
-    virtual IDL::traits< ::CCM_DDS::CCM_PortStatusListener >::ref_type get_shape_status () override;
+    virtual IDL::traits< ::CCM_DDS::CCM_PortStatusListener>::ref_type get_shape_status () override;
     //@}
 
     /** @name Session component operations */
@@ -199,7 +199,7 @@ namespace receiver_Impl
 
   private:
     /// Context for component instance.
-    IDL::traits< CCM_receiver_Context >::ref_type context_;
+    IDL::traits< CCM_receiver_Context>::ref_type context_;
 
     /** @name Component attributes. */
     //@{
@@ -207,8 +207,8 @@ namespace receiver_Impl
 
     /** @name Component facets. */
     //@{
-    IDL::traits< ::ShapeTypeInterface::CCM_Listener >::ref_type shape_data_listener_;
-    IDL::traits< ::CCM_DDS::CCM_PortStatusListener >::ref_type shape_status_;
+    IDL::traits< ::ShapeTypeInterface::CCM_Listener>::ref_type shape_data_listener_;
+    IDL::traits< ::CCM_DDS::CCM_PortStatusListener>::ref_type shape_status_;
     //@}
 
     /** @name User defined members. */

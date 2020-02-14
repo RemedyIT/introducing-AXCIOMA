@@ -96,7 +96,7 @@ namespace sender_Impl
 
   private:
     /// Context for component instance. Used for all middleware communication.
-    IDL::traits< CCM_sender_Context >::ref_type context_;
+    IDL::traits< CCM_sender_Context>::ref_type context_;
 
     /** @name User defined members. */
     //@{
@@ -130,7 +130,7 @@ namespace sender_Impl
 
     /// Factory method and getter for the connector_status_ShapeType facet
     /// @return existing instance of facet if one exists, else creates one
-    virtual IDL::traits< ::CCM_DDS::CCM_ConnectorStatusListener >::ref_type get_connector_status_ShapeType () override;
+    virtual IDL::traits< ::CCM_DDS::CCM_ConnectorStatusListener>::ref_type get_connector_status_ShapeType () override;
     //@}
 
     /** @name Supported attributes. */
@@ -177,7 +177,7 @@ namespace sender_Impl
 
   private:
     /// Context for component instance.
-    IDL::traits< CCM_sender_Context >::ref_type context_;
+    IDL::traits< CCM_sender_Context>::ref_type context_;
 
     /** @name Component attributes. */
     //@{
@@ -187,7 +187,7 @@ namespace sender_Impl
 
     /** @name Component facets. */
     //@{
-    IDL::traits< ::CCM_DDS::CCM_ConnectorStatusListener >::ref_type connector_status_ShapeType_;
+    IDL::traits< ::CCM_DDS::CCM_ConnectorStatusListener>::ref_type connector_status_ShapeType_;
     //@}
 
     /** @name User defined members. */
