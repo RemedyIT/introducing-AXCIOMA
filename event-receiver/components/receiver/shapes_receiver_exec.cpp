@@ -183,7 +183,7 @@ namespace receiver_Impl
     //@@{__RIDL_REGEN_MARKER__} - END : receiver_Impl::receiver_exec_i[ccm_remove]
   }
 
-  IDL::traits< ::ShapeTypeInterface::CCM_Listener >::ref_type
+  IDL::traits< ::ShapeTypeInterface::CCM_Listener>::ref_type
   receiver_exec_i::get_shape_data_listener ()
   {
   //@@{__RIDL_REGEN_MARKER__} - BEGIN : receiver_Impl::receiver_exec_i[get_shape_data_listener]
@@ -195,7 +195,7 @@ namespace receiver_Impl
   //@@{__RIDL_REGEN_MARKER__} - END : receiver_Impl::receiver_exec_i[get_shape_data_listener]
   }
 
-  IDL::traits< ::CCM_DDS::CCM_PortStatusListener >::ref_type
+  IDL::traits< ::CCM_DDS::CCM_PortStatusListener>::ref_type
   receiver_exec_i::get_shape_status ()
   {
   //@@{__RIDL_REGEN_MARKER__} - BEGIN : receiver_Impl::receiver_exec_i[get_shape_status]

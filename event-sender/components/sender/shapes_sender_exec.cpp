@@ -28,7 +28,6 @@ namespace sender_Impl
         instance_handle_ (std::move (instance_handle)),
         square_ (square) {}
 
-    virtual
     void
     on_trigger (
         IDL::traits< ::CCM_TT::TT_Timer>::ref_type timer,

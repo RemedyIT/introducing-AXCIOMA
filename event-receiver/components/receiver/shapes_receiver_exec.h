@@ -50,13 +50,11 @@ namespace receiver_Impl
     /** @name Operations from ::ShapeTypeInterface::CCM_Listener */
     //@{
 
-    virtual
     void
     on_one_data (
         const ::ShapeType& datum,
         const ::CCM_DDS::ReadInfo& info) override;
 
-    virtual
     void
     on_many_data (
         const ::ShapeTypeSeq& data,
@@ -72,7 +70,7 @@ namespace receiver_Impl
 
   private:
     /// Context for component instance. Used for all middleware communication.
-    IDL::traits< CCM_receiver_Context >::ref_type context_;
+    IDL::traits< CCM_receiver_Context>::ref_type context_;
 
     /** @name User defined members. */
     //@{
@@ -108,13 +106,11 @@ namespace receiver_Impl
     /** @name Operations from ::CCM_DDS::CCM_PortStatusListener */
     //@{
 
-    virtual
     void
     on_requested_deadline_missed (
         IDL::traits< ::DDS::DataReader>::ref_type the_reader,
         const ::DDS::RequestedDeadlineMissedStatus& status) override;
 
-    virtual
     void
     on_sample_lost (
         IDL::traits< ::DDS::DataReader>::ref_type the_reader,
@@ -130,7 +126,7 @@ namespace receiver_Impl
 
   private:
     /// Context for component instance. Used for all middleware communication.
-    IDL::traits< CCM_receiver_Context >::ref_type context_;
+    IDL::traits< CCM_receiver_Context>::ref_type context_;
 
     /** @name User defined members. */
     //@{
@@ -164,10 +160,10 @@ namespace receiver_Impl
 
     /// Factory method and getter for the shape_data_listener facet
     /// @return existing instance of facet if one exists, else creates one
-    virtual IDL::traits< ::ShapeTypeInterface::CCM_Listener >::ref_type get_shape_data_listener () override;
+    IDL::traits< ::ShapeTypeInterface::CCM_Listener>::ref_type get_shape_data_listener () override;
     /// Factory method and getter for the shape_status facet
     /// @return existing instance of facet if one exists, else creates one
-    virtual IDL::traits< ::CCM_DDS::CCM_PortStatusListener >::ref_type get_shape_status () override;
+    IDL::traits< ::CCM_DDS::CCM_PortStatusListener>::ref_type get_shape_status () override;
     //@}
 
     /** @name Session component operations */
@@ -175,19 +171,19 @@ namespace receiver_Impl
 
     /// Setter for container context for this component
     /// @param[in] ctx Component context
-    virtual void set_session_context (IDL::traits<Components::SessionContext>::ref_type ctx) override;
+    void set_session_context (IDL::traits<Components::SessionContext>::ref_type ctx) override;
 
     /// Component state change method to configuration_complete state
-    virtual void configuration_complete () override;
+    void configuration_complete () override;
 
     /// Component state change method to activated state
-    virtual void ccm_activate () override;
+    void ccm_activate () override;
 
     /// Component state change method to passivated state
-    virtual void ccm_passivate () override;
+    void ccm_passivate () override;
 
     /// Component state change method to removed state
-    virtual void ccm_remove () override;
+    void ccm_remove () override;
     //@}
 
     /** @name User defined public operations. */
@@ -199,7 +195,7 @@ namespace receiver_Impl
 
   private:
     /// Context for component instance.
-    IDL::traits< CCM_receiver_Context >::ref_type context_;
+    IDL::traits< CCM_receiver_Context>::ref_type context_;
 
     /** @name Component attributes. */
     //@{
@@ -207,8 +203,8 @@ namespace receiver_Impl
 
     /** @name Component facets. */
     //@{
-    IDL::traits< ::ShapeTypeInterface::CCM_Listener >::ref_type shape_data_listener_;
-    IDL::traits< ::CCM_DDS::CCM_PortStatusListener >::ref_type shape_status_;
+    IDL::traits< ::ShapeTypeInterface::CCM_Listener>::ref_type shape_data_listener_;
+    IDL::traits< ::CCM_DDS::CCM_PortStatusListener>::ref_type shape_status_;
     //@}
 
     /** @name User defined members. */
