@@ -230,7 +230,7 @@ namespace sender_Impl
     //@@{__RIDL_REGEN_MARKER__} - END : sender_Impl::sender_exec_i[ccm_remove]
   }
 
-  IDL::traits< ::CCM_DDS::CCM_ConnectorStatusListener >::ref_type
+  IDL::traits< ::CCM_DDS::CCM_ConnectorStatusListener>::ref_type
   sender_exec_i::get_connector_status_ShapeType ()
   {
   //@@{__RIDL_REGEN_MARKER__} - BEGIN : sender_Impl::sender_exec_i[get_connector_status_ShapeType]
