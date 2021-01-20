@@ -25,7 +25,7 @@ namespace receiver_Impl
 
   //@@{__RIDL_REGEN_MARKER__} - BEGIN : receiver_Impl::shape_data_listener_exec_i[ctor]
   shape_data_listener_exec_i::shape_data_listener_exec_i (
-    IDL::traits< CCM_receiver_Context >::ref_type context)
+    IDL::traits< CCM_receiver_Context>::ref_type context)
     : context_ (std::move (context))
   {
   }
@@ -78,7 +78,7 @@ namespace receiver_Impl
 
   //@@{__RIDL_REGEN_MARKER__} - BEGIN : receiver_Impl::shape_status_exec_i[ctor]
   shape_status_exec_i::shape_status_exec_i (
-    IDL::traits< CCM_receiver_Context >::ref_type context)
+    IDL::traits< CCM_receiver_Context>::ref_type context)
     : context_ (std::move (context))
   {
   }

@@ -25,7 +25,7 @@ namespace Example_EchoProvider_Impl
 
   //@@{__RIDL_REGEN_MARKER__} - BEGIN : Example_EchoProvider_Impl::do_echo_exec_i[ctor]
   do_echo_exec_i::do_echo_exec_i (
-    IDL::traits< ::Example::CCM_EchoProvider_Context >::ref_type context)
+    IDL::traits< ::Example::CCM_EchoProvider_Context>::ref_type context)
     : context_ (std::move (context))
   {
   }

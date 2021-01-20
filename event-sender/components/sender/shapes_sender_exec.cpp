@@ -21,14 +21,13 @@ namespace sender_Impl
     : public IDL::traits<CCM_TT::TT_Handler>::base_type
   {
   public:
-    TT_Callback (IDL::traits< CCM_sender_Context >::ref_type context,
+    TT_Callback (IDL::traits< CCM_sender_Context>::ref_type context,
                  DDS::InstanceHandle_t instance_handle,
                  ShapeType& square)
       : context_ (std::move (context)),
         instance_handle_ (std::move (instance_handle)),
         square_ (square) {}
 
-    virtual
     void
     on_trigger (
         IDL::traits< ::CCM_TT::TT_Timer>::ref_type timer,
@@ -36,7 +35,7 @@ namespace sender_Impl
         uint32_t round) override;
 
   private:
-    IDL::traits<CCM_sender_Context >::ref_type context_;
+    IDL::traits<CCM_sender_Context>::ref_type context_;
     DDS::InstanceHandle_t instance_handle_;
     ShapeType square_;
   };
@@ -68,7 +67,7 @@ namespace sender_Impl
 
   //@@{__RIDL_REGEN_MARKER__} - BEGIN : sender_Impl::connector_status_ShapeType_exec_i[ctor]
   connector_status_ShapeType_exec_i::connector_status_ShapeType_exec_i (
-    IDL::traits< CCM_sender_Context >::ref_type context)
+    IDL::traits< CCM_sender_Context>::ref_type context)
     : context_ (std::move (context))
   {
   }
