@@ -173,7 +173,7 @@ namespace sender_Impl
     /** @name Component attributes. */
     //@{
     /// Class member storing value of rate attribute
-    int16_t rate_ {};
+    int16_t rate_{};
     //@}
 
     /** @name Component facets. */
