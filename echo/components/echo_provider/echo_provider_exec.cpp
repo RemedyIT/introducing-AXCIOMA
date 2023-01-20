@@ -116,7 +116,7 @@ namespace Example_EchoProvider_Impl
     //@@{__RIDL_REGEN_MARKER__} - END : Example_EchoProvider_Impl::EchoProvider_exec_i[ccm_remove]
   }
 
-  IDL::traits< ::Example::CCM_Echo>::ref_type
+  IDL::traits<::Example::CCM_Echo>::ref_type
   EchoProvider_exec_i::get_do_echo ()
   {
   //@@{__RIDL_REGEN_MARKER__} - BEGIN : Example_EchoProvider_Impl::EchoProvider_exec_i[get_do_echo]

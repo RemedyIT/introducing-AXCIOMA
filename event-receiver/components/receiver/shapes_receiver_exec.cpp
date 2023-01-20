@@ -106,7 +106,7 @@ namespace receiver_Impl
 
   void
   shape_status_exec_i::on_requested_deadline_missed (
-      IDL::traits< ::DDS::DataReader>::ref_type the_reader,
+      IDL::traits<::DDS::DataReader>::ref_type the_reader,
       const ::DDS::RequestedDeadlineMissedStatus& status)
   {
     //@@{__RIDL_REGEN_MARKER__} - BEGIN : receiver_Impl::shape_status_exec_i::on_requested_deadline_missed[_the_reader_status]
@@ -117,7 +117,7 @@ namespace receiver_Impl
 
   void
   shape_status_exec_i::on_sample_lost (
-      IDL::traits< ::DDS::DataReader>::ref_type the_reader,
+      IDL::traits<::DDS::DataReader>::ref_type the_reader,
       const ::DDS::SampleLostStatus& status)
   {
     //@@{__RIDL_REGEN_MARKER__} - BEGIN : receiver_Impl::shape_status_exec_i::on_sample_lost[_the_reader_status]
@@ -183,7 +183,7 @@ namespace receiver_Impl
     //@@{__RIDL_REGEN_MARKER__} - END : receiver_Impl::receiver_exec_i[ccm_remove]
   }
 
-  IDL::traits< ::ShapeTypeInterface::CCM_Listener>::ref_type
+  IDL::traits<::ShapeTypeInterface::CCM_Listener>::ref_type
   receiver_exec_i::get_shape_data_listener ()
   {
   //@@{__RIDL_REGEN_MARKER__} - BEGIN : receiver_Impl::receiver_exec_i[get_shape_data_listener]
@@ -195,7 +195,7 @@ namespace receiver_Impl
   //@@{__RIDL_REGEN_MARKER__} - END : receiver_Impl::receiver_exec_i[get_shape_data_listener]
   }
 
-  IDL::traits< ::CCM_DDS::CCM_PortStatusListener>::ref_type
+  IDL::traits<::CCM_DDS::CCM_PortStatusListener>::ref_type
   receiver_exec_i::get_shape_status ()
   {
   //@@{__RIDL_REGEN_MARKER__} - BEGIN : receiver_Impl::receiver_exec_i[get_shape_status]

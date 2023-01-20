@@ -33,10 +33,9 @@ namespace sender_Impl
 
   /// Executor implementation class for connector_status_ShapeType facet
   class connector_status_ShapeType_exec_i final
-    : public IDL::traits< ::CCM_DDS::CCM_ConnectorStatusListener>::base_type
+    : public IDL::traits<::CCM_DDS::CCM_ConnectorStatusListener>::base_type
   {
   public:
-
     //@@{__RIDL_REGEN_MARKER__} - BEGIN : sender_Impl::connector_status_ShapeType_exec_i[ctor]
     /// Constructor
     /// @param[in] context Component context
@@ -45,39 +44,39 @@ namespace sender_Impl
     //@@{__RIDL_REGEN_MARKER__} - END : sender_Impl::connector_status_ShapeType_exec_i[ctor]
 
     /// Destructor
-    virtual ~connector_status_ShapeType_exec_i ();
+    ~connector_status_ShapeType_exec_i () override;
 
     /** @name Operations from ::CCM_DDS::CCM_ConnectorStatusListener */
     //@{
 
     void
     on_inconsistent_topic (
-        IDL::traits< ::DDS::Topic>::ref_type the_topic,
+        IDL::traits<::DDS::Topic>::ref_type the_topic,
         const ::DDS::InconsistentTopicStatus& status) override;
 
     void
     on_requested_incompatible_qos (
-        IDL::traits< ::DDS::DataReader>::ref_type the_reader,
+        IDL::traits<::DDS::DataReader>::ref_type the_reader,
         const ::DDS::RequestedIncompatibleQosStatus& status) override;
 
     void
     on_sample_rejected (
-        IDL::traits< ::DDS::DataReader>::ref_type the_reader,
+        IDL::traits<::DDS::DataReader>::ref_type the_reader,
         const ::DDS::SampleRejectedStatus& status) override;
 
     void
     on_offered_deadline_missed (
-        IDL::traits< ::DDS::DataWriter>::ref_type the_writer,
+        IDL::traits<::DDS::DataWriter>::ref_type the_writer,
         const ::DDS::OfferedDeadlineMissedStatus& status) override;
 
     void
     on_offered_incompatible_qos (
-        IDL::traits< ::DDS::DataWriter>::ref_type the_writer,
+        IDL::traits<::DDS::DataWriter>::ref_type the_writer,
         const ::DDS::OfferedIncompatibleQosStatus& status) override;
 
     void
     on_unexpected_status (
-        IDL::traits< ::DDS::Entity>::ref_type the_entity,
+        IDL::traits<::DDS::Entity>::ref_type the_entity,
         ::DDS::StatusKind status_kind) override;
     //@}
 
@@ -90,7 +89,7 @@ namespace sender_Impl
 
   private:
     /// Context for component instance. Used for all middleware communication.
-    IDL::traits< CCM_sender_Context>::ref_type context_;
+    IDL::traits<CCM_sender_Context>::ref_type context_;
 
     /** @name User defined members. */
     //@{
@@ -109,7 +108,7 @@ namespace sender_Impl
 
   /// Component Executor Implementation Class : sender_exec_i
   class sender_exec_i final
-    : public virtual IDL::traits< CCM_sender>::base_type
+    : public virtual IDL::traits<CCM_sender>::base_type
   {
   public:
     //@@{__RIDL_REGEN_MARKER__} - BEGIN : sender_Impl::sender_exec_i[ctor]
@@ -117,26 +116,22 @@ namespace sender_Impl
     sender_exec_i ();
     //@@{__RIDL_REGEN_MARKER__} - END : sender_Impl::sender_exec_i[ctor]
     /// Destructor
-    virtual ~sender_exec_i ();
+    ~sender_exec_i () override;
 
     /** @name Component port operations. */
     //@{
 
     /// Factory method and getter for the connector_status_ShapeType facet
     /// @return existing instance of facet if one exists, else creates one
-    IDL::traits< ::CCM_DDS::CCM_ConnectorStatusListener>::ref_type get_connector_status_ShapeType () override;
+    IDL::traits<::CCM_DDS::CCM_ConnectorStatusListener>::ref_type get_connector_status_ShapeType () override;
     //@}
 
     /** @name Supported attributes. */
     //@{
 
     /// Attribute rate
-
-    int16_t
-    rate () override;
-
-    void
-    rate (int16_t rate) override;
+    int16_t rate () override;
+    void rate (int16_t rate) override;
     //@}
 
     /** @name Session component operations */
@@ -168,7 +163,7 @@ namespace sender_Impl
 
   private:
     /// Context for component instance.
-    IDL::traits< CCM_sender_Context>::ref_type context_;
+    IDL::traits<CCM_sender_Context>::ref_type context_;
 
     /** @name Component attributes. */
     //@{
@@ -178,7 +173,7 @@ namespace sender_Impl
 
     /** @name Component facets. */
     //@{
-    IDL::traits< ::CCM_DDS::CCM_ConnectorStatusListener>::ref_type connector_status_ShapeType_;
+    IDL::traits<::CCM_DDS::CCM_ConnectorStatusListener>::ref_type connector_status_ShapeType_;
     //@}
 
     /** @name User defined members. */

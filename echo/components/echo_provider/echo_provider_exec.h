@@ -33,10 +33,9 @@ namespace Example_EchoProvider_Impl
 
   /// Executor implementation class for do_echo facet
   class do_echo_exec_i final
-    : public IDL::traits< ::Example::CCM_Echo>::base_type
+    : public IDL::traits<::Example::CCM_Echo>::base_type
   {
   public:
-
     //@@{__RIDL_REGEN_MARKER__} - BEGIN : Example_EchoProvider_Impl::do_echo_exec_i[ctor]
     /// Constructor
     /// @param[in] context Component context
@@ -45,7 +44,7 @@ namespace Example_EchoProvider_Impl
     //@@{__RIDL_REGEN_MARKER__} - END : Example_EchoProvider_Impl::do_echo_exec_i[ctor]
 
     /// Destructor
-    virtual ~do_echo_exec_i ();
+    ~do_echo_exec_i () override;
 
     /** @name Operations from ::Example::CCM_Echo */
     //@{
@@ -64,7 +63,7 @@ namespace Example_EchoProvider_Impl
 
   private:
     /// Context for component instance. Used for all middleware communication.
-    IDL::traits< ::Example::CCM_EchoProvider_Context>::ref_type context_;
+    IDL::traits<::Example::CCM_EchoProvider_Context>::ref_type context_;
 
     /** @name User defined members. */
     //@{
@@ -83,7 +82,7 @@ namespace Example_EchoProvider_Impl
 
   /// Component Executor Implementation Class : EchoProvider_exec_i
   class EchoProvider_exec_i final
-    : public virtual IDL::traits< ::Example::CCM_EchoProvider>::base_type
+    : public virtual IDL::traits<::Example::CCM_EchoProvider>::base_type
   {
   public:
     //@@{__RIDL_REGEN_MARKER__} - BEGIN : Example_EchoProvider_Impl::EchoProvider_exec_i[ctor]
@@ -91,14 +90,14 @@ namespace Example_EchoProvider_Impl
     EchoProvider_exec_i ();
     //@@{__RIDL_REGEN_MARKER__} - END : Example_EchoProvider_Impl::EchoProvider_exec_i[ctor]
     /// Destructor
-    virtual ~EchoProvider_exec_i ();
+    ~EchoProvider_exec_i () override;
 
     /** @name Component port operations. */
     //@{
 
     /// Factory method and getter for the do_echo facet
     /// @return existing instance of facet if one exists, else creates one
-    IDL::traits< ::Example::CCM_Echo>::ref_type get_do_echo () override;
+    IDL::traits<::Example::CCM_Echo>::ref_type get_do_echo () override;
     //@}
 
     /** @name Session component operations */
@@ -130,11 +129,11 @@ namespace Example_EchoProvider_Impl
 
   private:
     /// Context for component instance.
-    IDL::traits< ::Example::CCM_EchoProvider_Context>::ref_type context_;
+    IDL::traits<::Example::CCM_EchoProvider_Context>::ref_type context_;
 
     /** @name Component facets. */
     //@{
-    IDL::traits< ::Example::CCM_Echo>::ref_type do_echo_;
+    IDL::traits<::Example::CCM_Echo>::ref_type do_echo_;
     //@}
 
     /** @name User defined members. */

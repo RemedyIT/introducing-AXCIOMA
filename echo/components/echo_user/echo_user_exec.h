@@ -33,7 +33,7 @@ namespace Example_EchoUser_Impl
 
   /// Component Executor Implementation Class : EchoUser_exec_i
   class EchoUser_exec_i final
-    : public virtual IDL::traits< ::Example::CCM_EchoUser>::base_type
+    : public virtual IDL::traits<::Example::CCM_EchoUser>::base_type
   {
   public:
     //@@{__RIDL_REGEN_MARKER__} - BEGIN : Example_EchoUser_Impl::EchoUser_exec_i[ctor]
@@ -41,7 +41,7 @@ namespace Example_EchoUser_Impl
     EchoUser_exec_i ();
     //@@{__RIDL_REGEN_MARKER__} - END : Example_EchoUser_Impl::EchoUser_exec_i[ctor]
     /// Destructor
-    virtual ~EchoUser_exec_i ();
+    ~EchoUser_exec_i () override;
 
     /** @name Component port operations. */
     //@{
@@ -77,7 +77,7 @@ namespace Example_EchoUser_Impl
 
   private:
     /// Context for component instance.
-    IDL::traits< ::Example::CCM_EchoUser_Context>::ref_type context_;
+    IDL::traits<::Example::CCM_EchoUser_Context>::ref_type context_;
 
     /** @name Component facets. */
     //@{
