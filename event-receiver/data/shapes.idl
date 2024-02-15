@@ -3,11 +3,10 @@ typedef string<128> color_type;
 struct ShapeType {
   /// This field contains the color of the shape.
   color_type color; //@key
-
   /// This field contains the location of the shape along the x-axis.
   long x;
   /// This field contains the location of the shape along the y-axis.
   long y;
   /// This field contains the size of the shape.
   long shapesize;
-};//@TopLevel()
+};//@nested(FALSE)

@@ -1,5 +1,6 @@
 typedef string<128> color_type;
 
+@nested(FALSE)
 struct ShapeType {
   /// This field contains the color of the shape.
   color_type color; //@key
@@ -10,4 +11,4 @@ struct ShapeType {
   long y;
   /// This field contains the size of the shape.
   long shapesize;
-};//@TopLevel()
+};
